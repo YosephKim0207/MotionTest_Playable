@@ -35,3 +35,8 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+MotionTest_Playable/*
+!MotionTest_Playable/Assets
+MotionTest_Playable/Assets/*
+!MotionTest_Playable/Assets/Scripts
