@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField]
-    //private Transform cameraTransform;
     private Movement3D movement3D;
 
     private void Awake()

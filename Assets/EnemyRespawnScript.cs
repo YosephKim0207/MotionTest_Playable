@@ -5,10 +5,11 @@ using UnityEngine;
 public class EnemyRespawnScript : MonoBehaviour
 {
     public GameObject m_enemyPrefab;
+    public GameObject m_targetPrefab;
     public GameObject m_groundPrefab;
-    public float m_respawnTime;
+    public float m_respawnTime = 0;
+    public int enemyNumber = 10;
 
-    private int enemyNumber = 0;
     private List<objectPoolItem> objectPoolList;
 
     private class objectPoolItem
@@ -23,51 +24,74 @@ public class EnemyRespawnScript : MonoBehaviour
 
     private IEnumerator SpawnEnemy()
     {
-        //스테이지마다 다르게 나중에 변경하기
-        //현재 enemyNumber은 임의의 숫자임
-        enemyNumber = 10;
+        //적 오브젝트가 생성될 z축(높낮이) 위치
+        Vector3 groundPosition = Camera.main.WorldToScreenPoint(m_groundPrefab.transform.position);
+        float xPosition; 
+        float yPosition; 
+        Vector3 spawnPosition;
+        Vector3 targetDirection;
+        Quaternion rotatdTargetDirection;
 
-        for(int i = 0; i < enemyNumber; i++)
+        Debug.Log("카메라뷰 너비 : " + Screen.width + ", " + "카메라뷰 높이 : " + Screen.height);
+        //카메라뷰 밖 랜덤한 위치에서 적 오브젝트 생성
+        while (enemyNumber != 0)
         {
-            Vector3 groundPosition = Camera.main.WorldToScreenPoint(m_groundPrefab.transform.position);
-            float xPosition; //Random.RandomRange(0, Screen.width);
-            float yPosition; //Random.RandomRange(0, Screen.height);
-            Vector3 spawnPosition;
             switch (Random.RandomRange(0, 4))
             {
                 //북
                 case 0:
+                    //카메라뷰 범위 체크
                     xPosition = Random.Range(0, Screen.width);
-                    yPosition = Random.Range(Screen.height, Screen.height + 200);
+                    yPosition = Random.Range(Screen.height + 4000, Screen.height + 4200);
+                    Debug.Log("북 : " + xPosition + ", " + yPosition);
                     spawnPosition = Camera.main.ScreenToWorldPoint(new Vector3(xPosition, yPosition, groundPosition.z));
-                    Instantiate(m_enemyPrefab, new Vector3(spawnPosition.x, 0.0f, spawnPosition.z), Quaternion.identity);
+                    //타겟 오브젝트 방향으로 적 오브젝트 회전시켜 생성하기
+                    targetDirection = m_targetPrefab.transform.position - spawnPosition;
+                    rotatdTargetDirection = Quaternion.LookRotation(targetDirection);
+                    Instantiate(m_enemyPrefab, new Vector3(spawnPosition.x, 0.0f, spawnPosition.z), rotatdTargetDirection);
                     break;
                 //동
                 case 1:
-                    xPosition = Random.Range(Screen.width, Screen.width + 200);
+                    //카메라뷰 범위 체크
+                    xPosition = Random.Range(Screen.width + 600, Screen.width + 800);
                     yPosition = Random.Range(0, Screen.height);
+                    Debug.Log("동 : " + xPosition + ", " + yPosition);
                     spawnPosition = Camera.main.ScreenToWorldPoint(new Vector3(xPosition, yPosition, groundPosition.z));
-                    Instantiate(m_enemyPrefab, new Vector3(spawnPosition.x, 0.0f, spawnPosition.z), Quaternion.identity);
+                    //타겟 오브젝트 방향으로 적 오브젝트 회전시켜 생성하기
+                    targetDirection = m_targetPrefab.transform.position - spawnPosition;
+                    rotatdTargetDirection = Quaternion.LookRotation(targetDirection);
+                    Instantiate(m_enemyPrefab, new Vector3(spawnPosition.x, 0.0f, spawnPosition.z), rotatdTargetDirection);
                     break;
                 //남
                 case 2:
+                    //카메라뷰 범위 체크
                     xPosition = Random.Range(0, Screen.width);
-                    yPosition = Random.Range(-200, 0);
+                    yPosition = Random.Range(-600, -400);
+                    Debug.Log("남 : " + xPosition + ", " + yPosition);
                     spawnPosition = Camera.main.ScreenToWorldPoint(new Vector3(xPosition, yPosition, groundPosition.z));
-                    Instantiate(m_enemyPrefab, new Vector3(spawnPosition.x, 0.0f, spawnPosition.z), Quaternion.identity);
+                    //타겟 오브젝트 방향으로 적 오브젝트 회전시켜 생성하기
+                    targetDirection = m_targetPrefab.transform.position - spawnPosition;
+                    rotatdTargetDirection = Quaternion.LookRotation(targetDirection);
+                    Instantiate(m_enemyPrefab, new Vector3(spawnPosition.x, 0.0f, spawnPosition.z), rotatdTargetDirection);
                     break;
                 //서
                 case 3:
-                    xPosition = Random.Range(-200, 0);
+                    //카메라뷰 범위 체크
+                    xPosition = Random.Range(-600, -400);
                     yPosition = Random.Range(0, Screen.height);
+                    Debug.Log("서 : " + xPosition + ", " + yPosition);
                     spawnPosition = Camera.main.ScreenToWorldPoint(new Vector3(xPosition, yPosition, groundPosition.z));
-                    Instantiate(m_enemyPrefab, new Vector3(spawnPosition.x, 0.0f, spawnPosition.z), Quaternion.identity);
+                    //타겟 오브젝트 방향으로 적 오브젝트 회전시켜 생성하기
+                    targetDirection = m_targetPrefab.transform.position - spawnPosition;
+                    rotatdTargetDirection = Quaternion.LookRotation(targetDirection);
+                    Instantiate(m_enemyPrefab, new Vector3(spawnPosition.x, 0.0f, spawnPosition.z), rotatdTargetDirection);
                     break;
             }
+            //생성할 적 오브젝트 숫자 - 1
+            enemyNumber -= 1;
 
-            //(GameObject)Instantiate(m_enemyPrefab, new Vector3)
-        }
-        yield return new WaitForSeconds(m_respawnTime);
+            yield return new WaitForSeconds(m_respawnTime);
+        }  
     }
     // Start is called before the first frame update
     void Start()
@@ -78,6 +102,9 @@ public class EnemyRespawnScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //if(enemyNumber == 0)
+        //{
+        //    StopCoroutine(SpawnEnemy());
+        //}
     }
 }

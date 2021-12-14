@@ -37,32 +37,8 @@ public class SampleAnimation : MonoBehaviour
             this.animator.SetBool(key_isRun, false);
         }
 
-        // パンチ aを押す
-        if (Input.GetKeyUp("a"))
-        {
-            //Attack01に遷移する
-            this.animator.SetBool(key_isAttack01, true);
-        }
-        else
-        {
-            // Attack01からIdleに遷移する
-            this.animator.SetBool(key_isAttack01, false);
-        }
-		
-		// キック sを押す
-        if (Input.GetKeyUp("s"))
-        {
-            //Attack02に遷移する
-            this.animator.SetBool(key_isAttack02, true);
-        }
-        else
-        {
-            // Attack02からIdleに遷移する
-            this.animator.SetBool(key_isAttack02, false);
-        }
-       
         // ジャンプ spaceを押す
-        if (Input.GetKeyUp("space"))
+        if (Input.GetKeyUp(KeyCode.Space))
         {
             //Jumpに遷移する
             this.animator.SetBool(key_isJump, true);
@@ -71,25 +47,6 @@ public class SampleAnimation : MonoBehaviour
         {
             // JumpからIdleに遷移する
             this.animator.SetBool(key_isJump, false);
-        }
-
-        // ダメージ ｄを押す
-        if (Input.GetKeyUp("d"))
-        {
-            //Damageに遷移する
-            this.animator.SetBool(key_isDamage, true);
-        }
-        else
-        {
-            // DamageからIdleに遷移する
-            this.animator.SetBool(key_isDamage, false);
-        }
-
-        // 死亡 fを押す
-        if (Input.GetKeyUp("f"))
-        {
-            //Deadに遷移する
-            this.animator.SetBool(key_isDead, true);
         }
     }
 }
