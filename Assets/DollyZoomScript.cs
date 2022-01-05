@@ -11,6 +11,7 @@ public class DollyZoomScript : MonoBehaviour
 {
     public Transform m_target;
     public float m_dollySpeed = 3.0f;
+    public GameObject m_tatgetPannelObject;
     private Camera camera;
     private float initialFrustumHeight;
     private bool dollyZoomEnabled = true;
@@ -26,8 +27,10 @@ public class DollyZoomScript : MonoBehaviour
         Debug.Log(dollyZoomEnabled);
         if (dollyZoomEnabled)
         {
-            //화살표 상/하에 따라 카메라 돌리 인/아웃
-            transform.Translate(Input.GetAxis("Vertical") * Vector3.forward * Time.deltaTime * m_dollySpeed);
+            //테스트용 - 화살표 상/하에 따라 카메라 돌리 인/아웃
+            //transform.Translate(Input.GetAxis("Vertical") * Vector3.forward * Time.deltaTime * m_dollySpeed);
+            //실제사용 - 씬 진입시 자동 돌리 인
+            transform.Translate(Vector3.forward * Time.deltaTime * m_dollySpeed);
         }
         
         float currentDistance = Vector3.Distance(transform.position, m_target.position);
@@ -66,7 +69,12 @@ public class DollyZoomScript : MonoBehaviour
     {
         if(Vector3.Distance(transform.position, m_target.position) <= 1.1f)
         {
+            //돌리줌 정지
             dollyZoomEnabled = false;
+
+            //게임오버 화면 띄우기
+            m_tatgetPannelObject.SetActive(true);
+
         }
     }
 }

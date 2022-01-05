@@ -4,5 +4,26 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/BedSceneDoll 1.unity
+    guid: c411a4c91bb8ec84b84d09b0cec2b96e
+  - enabled: 1
+    path: Assets/Scenes/BedSceneDoll 2.unity
+    guid: 9399b2a7d27b88542a69279d9fc87ea0
+  - enabled: 1
+    path: Assets/Scenes/BedSceneDoll.unity
+    guid: 0f56b1898ae6bd44dae3e813205e3241
+  - enabled: 1
+    path: Assets/Scenes/BedSceneDoll 4.unity
+    guid: 6181010d5a40d73439b60890175afb37
+  - enabled: 1
+    path: Assets/Scenes/WolfAttack_LowAngle.unity
+    guid: 4ce44a8e636d3d04d9bb2ee4bdc35425
+  - enabled: 1
+    path: Assets/Scenes/WolfAttack_TopDown.unity
+    guid: ca59cc44de60db24ebba4b09d902d1d2
+  - enabled: 1
+    path: Assets/Scenes/Vertigo.unity
+    guid: 64fb69df58fdf3c428014c6e990bc094
   m_configObjects: {}

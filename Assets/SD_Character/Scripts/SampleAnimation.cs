@@ -10,11 +10,9 @@ public class SampleAnimation : MonoBehaviour
 
     // 設定したフラグの名前
     private const string key_isRun = "IsRun";
-    private const string key_isAttack01 = "IsAttack01";
-    private const string key_isAttack02 = "IsAttack02";
-    private const string key_isJump = "IsJump";
-    private const string key_isDamage = "IsDamage";
-    private const string key_isDead = "IsDead";
+    //private const string key_isJump = "IsJump";
+    //private const string key_isDamage = "IsDamage";
+    //private const string key_isDead = "IsDead";
     // 初期化メソッド
     void Start()
     {
@@ -38,15 +36,15 @@ public class SampleAnimation : MonoBehaviour
         }
 
         // ジャンプ spaceを押す
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            //Jumpに遷移する
-            this.animator.SetBool(key_isJump, true);
-        }
-        else
-        {
-            // JumpからIdleに遷移する
-            this.animator.SetBool(key_isJump, false);
-        }
+        //if (Input.GetKeyUp(KeyCode.Space))
+        //{
+        //    //Jumpに遷移する
+        //    this.animator.SetBool(key_isJump, true);
+        //}
+        //else
+        //{
+        //    // JumpからIdleに遷移する
+        //    this.animator.SetBool(key_isJump, false);
+        //}
     }
 }
