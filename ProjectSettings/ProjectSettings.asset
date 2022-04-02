@@ -656,7 +656,7 @@ PlayerSettings:
   cloudServicesEnabled:
     Analytics: 1
     Build: 0
-    Collab: 1
+    Collab: 0
     Game Performance: 0
     Purchasing: 0
     UDP: 0
@@ -675,7 +675,7 @@ PlayerSettings:
     m_VersionName: 
   apiCompatibilityLevel: 6
   activeInputHandler: 0
-  cloudProjectId: 1850cfd2-64c1-4bbe-9bca-3135a3fe0b9d
+  cloudProjectId: b1983e61-e065-4d6a-8fa0-2e7626877722
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
   projectName: MotionTest_Playable
