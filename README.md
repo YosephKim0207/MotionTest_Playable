@@ -1,9 +1,12 @@
 # MotionTest_Playable
  
+ ![전체보스연출](https://user-images.githubusercontent.com/46564046/235314111-4ea7c630-a4f5-4a8a-b34b-5859ca31969c.gif)
+ 
 <img width="1038" alt="image" src="https://user-images.githubusercontent.com/46564046/235314581-ef8dc954-d9ae-4a9d-b919-ef99c3058e7c.png">
 
-
 ## 보웬의 가족치료
+
+---
 
 보웬의 다세대 치료에 따르면 개개인이 적절하게 분화되지 못한 가족 관계는 개인의 불안수준을 증가시킵니다. 
 
