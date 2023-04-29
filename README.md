@@ -2,7 +2,7 @@
  
  ![전체보스연출](https://user-images.githubusercontent.com/46564046/235314111-4ea7c630-a4f5-4a8a-b34b-5859ca31969c.gif)
  
-<img width="1038" alt="image" src="https://user-images.githubusercontent.com/46564046/235314581-ef8dc954-d9ae-4a9d-b919-ef99c3058e7c.png">
+<img width="600" alt="image" src="https://user-images.githubusercontent.com/46564046/235314581-ef8dc954-d9ae-4a9d-b919-ef99c3058e7c.png">
 
 ## 보웬의 가족치료
 
