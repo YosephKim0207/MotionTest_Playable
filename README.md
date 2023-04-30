@@ -3,8 +3,16 @@
  ![전체보스연출](https://user-images.githubusercontent.com/46564046/235314111-4ea7c630-a4f5-4a8a-b34b-5859ca31969c.gif)
  
  ![플레이영상](https://user-images.githubusercontent.com/46564046/235345908-70d508f7-e041-46ca-8d24-22de8610e6c5.gif)
+ 
+ <img width="600" alt="image" src="https://user-images.githubusercontent.com/46564046/235314581-ef8dc954-d9ae-4a9d-b919-ef99c3058e7c.png">
 
-<img width="600" alt="image" src="https://user-images.githubusercontent.com/46564046/235314581-ef8dc954-d9ae-4a9d-b919-ef99c3058e7c.png">
+---
+
+## 프로젝트 소개  |  스토리 중심 게임 제작
+- 게임 장르 : 어드벤쳐
+- 목표 : 플레이어가 게임 속 세상과 상호작용함으로서 보웬의 가족치료를 바탕으로 하는 이야기의 몰입을 높인다
+- 플랫폼 : Windows
+- 사용 엔진과 언어 : Unity, C#
 
 
 ## 보웬의 가족치료
